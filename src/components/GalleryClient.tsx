@@ -3,58 +3,60 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-const WIX = "https://static.wixstatic.com/media";
-
 const serie2 = [
   {
-    title: "After Tea",
-    subtitle: "Autoportrait",
+    title: "After Tea", subtitle: "Autoportrait",
     size: "50×50 cm", price: "1 300 €",
-    image: `${WIX}/b18fbb_f002dba6b0ed430bb0d2ff49a69bce7a~mv2.png`,
+    image: "/images/p10_img1.jpeg",
     description: "Bleu Majorelle, orange ocre terreux, noir Soulages. Le rituel du thé marocain étendu en méditation.",
   },
   {
-    title: "The End",
-    subtitle: "Al Hank Lighthouse · Casablanca",
+    title: "The End", subtitle: "Al Hank Lighthouse · Casablanca",
     size: "130×97 cm", price: "3 000 €",
-    image: `${WIX}/b18fbb_393330155b9d46c2b9718c519316d956~mv2.png`,
+    image: "/images/p07_img2.png",
     description: "La fin non comme silence, mais comme transformation — un rythme qui résonne à travers lumière, ombre et émotion.",
   },
   {
-    title: "Réminiscence",
-    subtitle: "Blue Klein & Majorelle",
+    title: "Réminiscence", subtitle: "Blue Klein & Majorelle",
     size: "80×80 cm", price: "2 100 €",
-    image: `${WIX}/b18fbb_cae91198dfbc4439b2aa902f3747fa16~mv2.png`,
+    image: "/images/p12_img1.jpeg",
     description: "Un cercle se déploie depuis le centre — le bleu devient une lumière dense, presque tactile, espace de méditation.",
   },
   {
-    title: "Dyptique Majorelle",
-    subtitle: "Silence absolu",
+    title: "Dyptique Majorelle", subtitle: "Silence absolu",
     size: "60×60 cm", price: "1 600 €",
-    image: `${WIX}/b18fbb_9aabcb39edd941e781079ec20b7bd4a8~mv2.png`,
+    image: "/images/p14_img1.jpeg",
     description: "Le bleu et l'orange s'opposent. La ligne centrale marque la frontière entre ces deux souffles et deux mondes.",
   },
 ];
 
 const serie1 = [
   {
-    title: "Marrakech",
-    subtitle: "The Red City",
+    title: "Casablanca", subtitle: "2023 · Édition limitée",
+    size: undefined, price: "Best Seller",
+    image: "/images/p05_img1.jpeg",
+    description: "La plus vendue et reproduite de la série. Casablanca marque le début du voyage de Galerie Ani.",
+  },
+  {
+    title: "Tanger III", subtitle: "The Sounds of Tangier",
+    size: undefined, price: "Sur demande",
+    image: "/images/p06_img1.png",
+    description: "Le vert, symbole de guérison, de patrimoine et d'identité enracinée, traverse ce tableau.",
+  },
+  {
+    title: "Marrakech", subtitle: "The Red City",
     size: undefined, price: "1 900 €",
-    image: `${WIX}/b18fbb_25782a6965fe4515aad6aaa7c01f9f62~mv2.png`,
+    image: "https://static.wixstatic.com/media/b18fbb_25782a6965fe4515aad6aaa7c01f9f62~mv2.png",
     description: "Klein et Majorelle bleu, orange des remparts, noir de Soulages — les contrastes de la ville ocre.",
   },
   {
-    title: "Tanger II",
-    subtitle: "Cities of Atlas",
+    title: "Tanger II", subtitle: "Cities of Atlas",
     size: undefined, price: "Sur demande",
-    image: `${WIX}/b18fbb_d0186b2a11c54f1aa2f4a6a7faed90f4~mv2.png`,
+    image: "https://static.wixstatic.com/media/b18fbb_d0186b2a11c54f1aa2f4a6a7faed90f4~mv2.png",
     description: "Tanger, carrefour entre continents et empires, porte le poids des siècles dans son silence.",
   },
 ];
 
-// Série 2 : bleu Klein #1515b5
-// Série 1 : terracotta #7c2d12
 const C2 = { r: 21, g: 21, b: 181 };
 const C1 = { r: 124, g: 45, b: 18 };
 
@@ -68,7 +70,7 @@ function ArtworkCard({ a }: { a: typeof serie2[0] }) {
       <div className="relative overflow-hidden">
         <Image src={a.image} alt={a.title} width={600} height={600}
           className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
-          unoptimized />
+          unoptimized={a.image.startsWith("http")} />
         <div className="artwork-overlay">
           <p className="text-[#c9a84c] text-[0.6rem] tracking-widest uppercase mb-1">{a.subtitle}</p>
           <p className="text-white text-sm font-light tracking-widest uppercase">{a.title}</p>
@@ -166,20 +168,25 @@ export default function GalleryClient() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 md:gap-5 max-w-2xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
             {serie1.map((a) => <ArtworkCard key={a.title} a={a} />)}
           </div>
 
-          <div className="mt-16 border-t border-white/10 pt-12 text-center max-w-xl mx-auto">
-            <p className="text-[#f5f0e8]/50 text-sm leading-relaxed">
-              La Série 1 trace un itinéraire artistique à travers des villes riches en histoire.
-              Chaque toile capture des fragments de leur passé — une archive visuelle façonnée
-              par l&apos;émotion, la texture et la couleur.
+          {/* Mood board */}
+          <div className="mt-16 border-t border-white/10 pt-12">
+            <p className="text-[0.6rem] tracking-[0.4em] uppercase text-[#c9a84c]/60 mb-6 text-center">
+              Mood Board · Cities of Atlas
             </p>
-            <div className="mt-8 flex justify-center gap-6 text-xs tracking-widest uppercase text-[#f5f0e8]/30">
-              <span>Paris</span><span>·</span><span>Bordeaux</span><span>·</span><span>Casablanca</span>
+            <div className="grid grid-cols-4 gap-2">
+              {["/images/p17_img1.png", "/images/p17_img2.png", "/images/p17_img5.png", "/images/p17_img6.png"].map((src, i) => (
+                <div key={i} className="relative overflow-hidden aspect-square">
+                  <Image src={src} alt={`Mood ${i + 1}`} fill
+                    className="object-cover opacity-70 hover:opacity-100 transition-opacity duration-500" />
+                </div>
+              ))}
             </div>
           </div>
+
         </div>
       </div>
     </div>

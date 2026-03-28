@@ -5,18 +5,15 @@ export const metadata = {
   description: "Artiste franco-marocaine entre Paris, Casablanca, Bordeaux et Genève.",
 };
 
-const ARTIST_PHOTO = "https://galerieani.infy.uk/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-12-at-11.01.32-PM-704x1024.jpeg";
-const WIX = "https://static.wixstatic.com/media";
-
 export default function AboutPage() {
   return (
     <div className="pt-16 min-h-screen">
 
-      {/* ── HEADER ── */}
+      {/* ── HEADER — Ani à la galerie ── */}
       <section className="relative py-28 px-6 text-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src={ARTIST_PHOTO} alt="Anissa Hafidi" fill
-            className="object-cover object-top opacity-25" priority unoptimized />
+          <Image src="/images/p13_img1.jpeg" alt="Anissa Hafidi à la galerie"
+            fill className="object-cover object-top opacity-30" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/85" />
         </div>
         <div className="relative z-10">
@@ -31,10 +28,11 @@ export default function AboutPage() {
       <section className="max-w-5xl mx-auto px-6 py-20">
         <div className="grid md:grid-cols-2 gap-16 items-start">
 
+          {/* Photo — Ani devant ses œuvres */}
           <div className="relative">
             <div className="relative overflow-hidden">
-              <Image src={ARTIST_PHOTO} alt="Anissa Hafidi" width={704} height={1024}
-                className="w-full object-cover" unoptimized />
+              <Image src="/images/p02_img2.png" alt="Anissa Hafidi devant ses œuvres"
+                width={800} height={1000} className="w-full object-cover" />
               <div className="absolute -bottom-3 -right-3 w-full h-full border border-[#c9a84c]/30 pointer-events-none" />
             </div>
             <div className="mt-8 flex flex-col gap-3">
@@ -47,6 +45,7 @@ export default function AboutPage() {
             </div>
           </div>
 
+          {/* Texte bio */}
           <div className="flex flex-col gap-10">
             <div>
               <h2 className="text-sm tracking-[0.3em] uppercase text-[#c9a84c] mb-5">Qui suis-je</h2>
@@ -69,8 +68,7 @@ export default function AboutPage() {
               </p>
               <p className="text-[#f5f0e8]/75 leading-relaxed text-sm">
                 Née franco-marocaine, l&apos;artiste retrace dans ses toiles des histoires personnelles et collectives
-                à travers des villes en couches, des textures et des paysages. Sa collection est un voyage
-                immersif au Maroc.
+                à travers des villes en couches, des textures et des paysages. Sa collection est un voyage immersif au Maroc.
               </p>
             </div>
 
@@ -107,50 +105,66 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── APERÇU ŒUVRES ── */}
+      {/* ── GALERIE OPENING ── */}
       <section className="border-t border-white/5 py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-[#c9a84c] mb-3">Morocco Collection</p>
-            <h2 className="text-2xl font-light tracking-widest">Séries I & II</h2>
+            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-[#c9a84c] mb-3">Morocco Collection Opening</p>
+            <h2 className="text-2xl font-light tracking-widest">Série 1 — Paris · Bordeaux · Casablanca</h2>
             <div className="divider-gold" />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {[
-              { src: `${WIX}/b18fbb_9aabcb39edd941e781079ec20b7bd4a8~mv2.png`, label: "Dyptique Majorelle" },
-              { src: `${WIX}/b18fbb_cae91198dfbc4439b2aa902f3747fa16~mv2.png`, label: "Réminiscence" },
-              { src: `${WIX}/b18fbb_25782a6965fe4515aad6aaa7c01f9f62~mv2.png`, label: "Marrakech" },
-              { src: `${WIX}/b18fbb_d0186b2a11c54f1aa2f4a6a7faed90f4~mv2.png`, label: "Tanger II" },
-            ].map((a) => (
-              <div key={a.label} className="relative overflow-hidden aspect-square group">
-                <Image src={a.src} alt={a.label} fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105" unoptimized />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-3">
-                  <p className="text-xs tracking-widest uppercase text-[#f5f0e8]/80">{a.label}</p>
-                </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="relative overflow-hidden aspect-square">
+              <Image src="/images/p06_img1.png" alt="Tanger III" fill
+                className="object-cover hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                <p className="text-xs tracking-widest uppercase text-[#f5f0e8]/80">Tanger III</p>
               </div>
-            ))}
+            </div>
+            <div className="relative overflow-hidden aspect-square">
+              <Image src="/images/p04_img1.png" alt="Marrakech Set" fill
+                className="object-cover hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                <p className="text-xs tracking-widest uppercase text-[#f5f0e8]/80">Marrakech Set</p>
+              </div>
+            </div>
+            <div className="relative overflow-hidden aspect-square col-span-2 md:col-span-1">
+              <Image src="/images/p11_img1.jpeg" alt="Série 2 — Echoes of Heart" fill
+                className="object-cover hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                <p className="text-xs tracking-widest uppercase text-[#f5f0e8]/80">Série 2 · Echoes of Heart</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── ART LEASING ── */}
-      <section className="border-t border-white/5 py-20 px-6 text-center">
-        <div className="max-w-2xl mx-auto">
-          <p className="text-[0.65rem] tracking-[0.4em] uppercase text-[#c9a84c] mb-4">Services</p>
-          <h2 className="text-2xl font-light tracking-widest mb-4">Art Leasing</h2>
-          <div className="divider-gold" />
-          <p className="text-[#f5f0e8]/65 text-sm leading-relaxed mb-4">
-            Un service de location d&apos;art est proposé aux entreprises souhaitant enrichir leur espace de travail.
-            Les clients bénéficient d&apos;avantages fiscaux et sont accompagnés par nos avocats fiscalistes spécialisés.
-          </p>
-          <p className="text-[#f5f0e8]/40 text-xs tracking-wider mb-8">
-            Paris · La Défense · Rue du Faubourg Saint-Honoré
-          </p>
-          <a href="mailto:galerieani.pro@gmail.com"
-            className="inline-block px-8 py-3 text-xs tracking-[0.25em] uppercase border border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c] hover:text-black transition-all duration-300">
-            Nous contacter
-          </a>
+      <section className="border-t border-white/5 py-20 px-6">
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-[#c9a84c] mb-4">Services</p>
+            <h2 className="text-2xl font-light tracking-widest mb-4">Art Leasing</h2>
+            <div className="w-8 h-px bg-[#c9a84c] mb-6" />
+            <p className="text-[#f5f0e8]/65 text-sm leading-relaxed mb-4">
+              Un service de location d&apos;art est proposé aux entreprises souhaitant enrichir leur espace de travail.
+              Ce choix permet de renouveler régulièrement les œuvres et de soutenir l&apos;art contemporain.
+            </p>
+            <p className="text-[#f5f0e8]/65 text-sm leading-relaxed mb-6">
+              Les clients bénéficient d&apos;avantages fiscaux et sont accompagnés par nos avocats fiscalistes spécialisés.
+            </p>
+            <a href="mailto:galerieani.pro@gmail.com"
+              className="text-xs tracking-[0.25em] uppercase text-[#c9a84c] border-b border-[#c9a84c]/40 pb-1 hover:border-[#c9a84c] transition-colors duration-300">
+              Nous contacter →
+            </a>
+          </div>
+          <div className="relative overflow-hidden">
+            <Image src="/images/p15_img1.jpeg" alt="Art Leasing — La Défense Paris"
+              width={800} height={600} className="w-full object-cover" />
+            <p className="text-[0.6rem] tracking-wider text-[#f5f0e8]/30 mt-3 text-center uppercase">
+              La Défense Business Center · Paris
+            </p>
+          </div>
         </div>
       </section>
 

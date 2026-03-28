@@ -1,23 +1,21 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const WP = "https://galerieani.infy.uk/wp-content/uploads/2025";
 const WIX = "https://static.wixstatic.com/media";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen flex flex-col">
 
-      {/* ── HERO ── */}
+      {/* ── HERO — Ani au coucher de soleil avec "The End" ── */}
       <section className="relative flex items-center justify-center min-h-screen overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src={`${WP}/05/WhatsApp-Image-2025-05-12-at-11.01.32-PM-704x1024.jpeg`}
-            alt="Anissa Hafidi"
+            src="/images/p07_img2.png"
+            alt="Anissa Hafidi — The End, Anfa Beach Casablanca"
             fill
-            className="object-cover object-top opacity-35"
+            className="object-cover object-center opacity-50"
             priority
-            unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/90" />
         </div>
@@ -51,9 +49,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── WHY MOROCCO ── */}
-      <section className="py-24 px-6 text-center border-t border-white/5">
-        <div className="max-w-3xl mx-auto">
+      {/* ── WHY MOROCCO — fond dunes + peinture ── */}
+      <section className="relative py-24 px-6 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image src="/images/p02_img1.png" alt="Sahara et Majorelle" fill className="object-cover opacity-20" />
+          <div className="absolute inset-0 bg-black/65" />
+        </div>
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
           <p className="text-[0.65rem] tracking-[0.4em] uppercase text-[#c9a84c] mb-4">Why Morocco ?</p>
           <h2 className="text-2xl md:text-3xl font-light tracking-widest mb-4">Une symphonie de vie</h2>
           <div className="divider-gold" />
@@ -77,15 +79,15 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { src: `${WIX}/b18fbb_f002dba6b0ed430bb0d2ff49a69bce7a~mv2.png`, title: "After Tea", price: "1 300 €" },
+              { src: "/images/p10_img1.jpeg", title: "After Tea", price: "1 300 €" },
+              { src: "/images/p14_img1.jpeg", title: "Dyptique Majorelle", price: "1 600 €" },
+              { src: "/images/p12_img1.jpeg", title: "Réminiscence", price: "2 100 €" },
               { src: `${WIX}/b18fbb_393330155b9d46c2b9718c519316d956~mv2.png`, title: "The End", price: "3 000 €" },
-              { src: `${WIX}/b18fbb_cae91198dfbc4439b2aa902f3747fa16~mv2.png`, title: "Réminiscence", price: "2 100 €" },
-              { src: `${WIX}/b18fbb_9aabcb39edd941e781079ec20b7bd4a8~mv2.png`, title: "Dyptique Majorelle", price: "1 600 €" },
             ].map((a) => (
               <div key={a.title} className="artwork-card group">
                 <Image src={a.src} alt={a.title} width={400} height={400}
                   className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
-                  unoptimized />
+                  unoptimized={a.src.startsWith("http")} />
                 <div className="artwork-overlay">
                   <p className="text-white text-xs tracking-widest uppercase">{a.title}</p>
                   <p className="text-[#c9a84c] text-xs mt-1">{a.price}</p>
@@ -103,26 +105,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── MARRAKECH SET ── */}
+      {/* ── SÉRIE 1 — Marrakech Set ── */}
       <section className="py-20 px-6 border-t border-white/5">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="grid grid-cols-2 gap-3">
-            <Image src={`${WIX}/b18fbb_25782a6965fe4515aad6aaa7c01f9f62~mv2.png`} alt="Marrakech"
-              width={400} height={400} className="w-full aspect-square object-cover" unoptimized />
-            <Image src={`${WIX}/b18fbb_d0186b2a11c54f1aa2f4a6a7faed90f4~mv2.png`} alt="Tanger II"
-              width={400} height={400} className="w-full aspect-square object-cover" unoptimized />
+          <div className="relative overflow-hidden">
+            <Image src="/images/p04_img2.png" alt="Marrakech Set" width={800} height={600} className="w-full object-cover" />
+            <div className="absolute top-4 left-4 bg-[#c9a84c] text-black text-[0.6rem] tracking-[0.2em] uppercase px-3 py-1">
+              Best Seller
+            </div>
           </div>
           <div>
             <p className="text-[0.65rem] tracking-[0.4em] uppercase text-[#c9a84c] mb-4">Série 1 · Cities of Atlas</p>
-            <h2 className="text-2xl md:text-3xl font-light tracking-widest mb-4">Itinéraire artistique</h2>
+            <h2 className="text-2xl md:text-3xl font-light tracking-widest mb-4">Marrakech Set</h2>
             <div className="w-8 h-px bg-[#c9a84c] mb-6" />
             <p className="text-[#f5f0e8]/65 text-sm leading-relaxed mb-4">
-              La Série 1 trace un itinéraire artistique à travers des villes riches en histoire.
-              Chaque toile capture des fragments de leur passé, des codes architecturaux et des couches culturelles.
+              Ce triptyque capture les contrastes de la ville ocre. Le bleu Klein et Majorelle évoque
+              les jardins Majorelle, havre de calme et de contemplation.
             </p>
             <p className="text-[#f5f0e8]/65 text-sm leading-relaxed mb-8">
-              Ensemble, elles offrent une interprétation multi-sensorielle du patrimoine —
-              une archive visuelle façonnée par l&apos;émotion, la texture et la couleur.
+              L&apos;orange renvoie à la lumière chaude sur les remparts, et le noir de Soulages,
+              dense et subtil, rappelle les anciennes portes, les nuits étoilées et les mystères de la Médina.
             </p>
             <Link href="/gallery"
               className="text-xs tracking-[0.25em] uppercase text-[#c9a84c] border-b border-[#c9a84c]/40 pb-1 hover:border-[#c9a84c] transition-colors duration-300">
