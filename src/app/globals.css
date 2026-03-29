@@ -4,8 +4,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Georgia', serif;
-  background: linear-gradient(160deg, #08081a 0%, #1515b5 30%, #0a0a0a 65%, #c84800 100%);
+  font-family: inherit;
+  background: #b5541e;
   background-attachment: fixed;
   color: #f5f0e8;
   min-height: 100vh;
@@ -13,7 +13,7 @@ body {
 
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #0a0a0a; }
-::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: black; border-radius: 3px; }
 
 .nav-link {
   position: relative;
@@ -29,7 +29,7 @@ body {
   position: absolute;
   bottom: -4px; left: 0;
   width: 0; height: 1px;
-  background: #c9a84c;
+  background: black;
   transition: width 0.35s ease;
 }
 .nav-link:hover::after, .nav-link.active::after { width: 100%; }
@@ -50,6 +50,6 @@ body {
 
 .divider-gold {
   width: 48px; height: 1px;
-  background: #c9a84c;
+  background: black;
   margin: 1.25rem auto;
 }

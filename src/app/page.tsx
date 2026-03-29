@@ -21,11 +21,11 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-2xl mx-auto mt-16">
-          <p className="text-[0.65rem] tracking-[0.5em] uppercase text-[#c9a84c] mb-6">
+          <p className="text-[0.65rem] tracking-[0.5em] uppercase text-black mb-6">
             Morocco Collection · Limited Edition
           </p>
           <h1 className="text-5xl md:text-7xl font-light tracking-[0.08em] leading-tight mb-4">
-            Anissa<br /><span className="italic text-[#c9a84c]">Hafidi</span>
+            Anissa<br /><span className="italic text-black">Hafidi</span>
           </h1>
           <div className="divider-gold" />
           <p className="text-xs tracking-[0.35em] uppercase text-[#f5f0e8]/40 mb-2">Artiste Peintre · Anissheart</p>
@@ -33,7 +33,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/gallery"
-              className="px-8 py-3 text-xs tracking-[0.25em] uppercase border border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c] hover:text-black transition-all duration-300">
+              className="px-8 py-3 text-xs tracking-[0.25em] uppercase border border-black text-black hover:bg-black hover:text-black transition-all duration-300">
               Voir les Œuvres
             </Link>
             <Link href="/about"
@@ -56,7 +56,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/65" />
         </div>
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <p className="text-[0.65rem] tracking-[0.4em] uppercase text-[#c9a84c] mb-4">Why Morocco ?</p>
+          <p className="text-[0.65rem] tracking-[0.4em] uppercase text-black mb-4">Why Morocco ?</p>
           <h2 className="text-2xl md:text-3xl font-light tracking-widest mb-4">Une symphonie de vie</h2>
           <div className="divider-gold" />
           <p className="text-[#f5f0e8]/65 text-sm leading-relaxed max-w-xl mx-auto">
@@ -71,7 +71,7 @@ export default function Home() {
       <section className="py-20 px-6 border-t border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-[#c9a84c] mb-3">Série 2 · Echoes of Heart</p>
+            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-black mb-3">Série 2 · Echoes of Heart</p>
             <h2 className="text-2xl md:text-3xl font-light tracking-widest">Bleu Klein · Orange · Noir Soulages</h2>
             <div className="divider-gold" />
             <p className="text-[#f5f0e8]/50 text-sm">Acrylique au couteau · Paris · The Muisca Gallery · 2025</p>
@@ -90,7 +90,7 @@ export default function Home() {
                   unoptimized={a.src.startsWith("http")} />
                 <div className="artwork-overlay">
                   <p className="text-white text-xs tracking-widest uppercase">{a.title}</p>
-                  <p className="text-[#c9a84c] text-xs mt-1">{a.price}</p>
+                  <p className="text-black text-xs mt-1">{a.price}</p>
                 </div>
               </div>
             ))}
@@ -98,7 +98,7 @@ export default function Home() {
 
           <div className="text-center mt-10">
             <Link href="/gallery"
-              className="inline-block px-10 py-3 text-xs tracking-[0.25em] uppercase border border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c] hover:text-black transition-all duration-300">
+              className="inline-block px-10 py-3 text-xs tracking-[0.25em] uppercase border border-black text-black hover:bg-black hover:text-black transition-all duration-300">
               Découvrir la collection complète
             </Link>
           </div>
@@ -110,14 +110,14 @@ export default function Home() {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="relative overflow-hidden">
             <Image src="/images/p04_img2.png" alt="Marrakech Set" width={800} height={600} className="w-full object-cover" />
-            <div className="absolute top-4 left-4 bg-[#c9a84c] text-black text-[0.6rem] tracking-[0.2em] uppercase px-3 py-1">
+            <div className="absolute top-4 left-4 bg-black text-black text-[0.6rem] tracking-[0.2em] uppercase px-3 py-1">
               Best Seller
             </div>
           </div>
           <div>
-            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-[#c9a84c] mb-4">Série 1 · Cities of Atlas</p>
+            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-black mb-4">Série 1 · Cities of Atlas</p>
             <h2 className="text-2xl md:text-3xl font-light tracking-widest mb-4">Marrakech Set</h2>
-            <div className="w-8 h-px bg-[#c9a84c] mb-6" />
+            <div className="w-8 h-px bg-black mb-6" />
             <p className="text-[#f5f0e8]/65 text-sm leading-relaxed mb-4">
               Ce triptyque capture les contrastes de la ville ocre. Le bleu Klein et Majorelle évoque
               les jardins Majorelle, havre de calme et de contemplation.
@@ -127,7 +127,7 @@ export default function Home() {
               dense et subtil, rappelle les anciennes portes, les nuits étoilées et les mystères de la Médina.
             </p>
             <Link href="/gallery"
-              className="text-xs tracking-[0.25em] uppercase text-[#c9a84c] border-b border-[#c9a84c]/40 pb-1 hover:border-[#c9a84c] transition-colors duration-300">
+              className="text-xs tracking-[0.25em] uppercase text-black border-b border-black/40 pb-1 hover:border-black transition-colors duration-300">
               Voir la Série 1 →
             </Link>
           </div>

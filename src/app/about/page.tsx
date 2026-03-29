@@ -17,7 +17,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/85" />
         </div>
         <div className="relative z-10">
-          <p className="text-[0.65rem] tracking-[0.5em] uppercase text-[#c9a84c] mb-4">About me</p>
+          <p className="text-[0.65rem] tracking-[0.5em] uppercase text-black mb-4">About me</p>
           <h1 className="text-4xl md:text-6xl font-light tracking-[0.1em] mb-3">Anissa Hafidi</h1>
           <div className="divider-gold" />
           <p className="text-xs tracking-[0.3em] uppercase text-[#f5f0e8]/40">Artiste Peintre · Anissheart</p>
@@ -33,12 +33,12 @@ export default function AboutPage() {
             <div className="relative overflow-hidden">
               <Image src="/images/p02_img2.png" alt="Anissa Hafidi devant ses œuvres"
                 width={800} height={1000} className="w-full object-cover" />
-              <div className="absolute -bottom-3 -right-3 w-full h-full border border-[#c9a84c]/30 pointer-events-none" />
+              <div className="absolute -bottom-3 -right-3 w-full h-full border border-black/30 pointer-events-none" />
             </div>
             <div className="mt-8 flex flex-col gap-3">
               {["Paris", "Casablanca", "Bordeaux", "Genève"].map((city) => (
                 <div key={city} className="flex items-center gap-3">
-                  <span className="w-6 h-px bg-[#c9a84c]" />
+                  <span className="w-6 h-px bg-black" />
                   <span className="text-xs tracking-[0.25em] uppercase text-[#f5f0e8]/50">{city}</span>
                 </div>
               ))}
@@ -48,7 +48,7 @@ export default function AboutPage() {
           {/* Texte bio */}
           <div className="flex flex-col gap-10">
             <div>
-              <h2 className="text-sm tracking-[0.3em] uppercase text-[#c9a84c] mb-5">Qui suis-je</h2>
+              <h2 className="text-sm tracking-[0.3em] uppercase text-black mb-5">Qui suis-je</h2>
               <p className="text-[#f5f0e8]/75 leading-relaxed text-sm mb-4">
                 Ani est une artiste franco-marocaine qui partage sa vie entre Paris, Casablanca, Bordeaux et Genève.
                 Depuis son enfance, le dessin est pour elle un langage naturel et instinctif, hérité de son père, passionné d&apos;art.
@@ -60,7 +60,7 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <h2 className="text-sm tracking-[0.3em] uppercase text-[#c9a84c] mb-5">L&apos;électrocardiogramme comme langage</h2>
+              <h2 className="text-sm tracking-[0.3em] uppercase text-black mb-5">L&apos;électrocardiogramme comme langage</h2>
               <p className="text-[#f5f0e8]/75 leading-relaxed text-sm mb-4">
                 Son travail est centré sur l&apos;électrocardiogramme — le battement du cœur — comme matrice de son
                 langage pictural. Elle varie les rythmes selon les émotions : longues ou courtes pulsations,
@@ -73,7 +73,7 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <h2 className="text-sm tracking-[0.3em] uppercase text-[#c9a84c] mb-5">Matériaux & Technique</h2>
+              <h2 className="text-sm tracking-[0.3em] uppercase text-black mb-5">Matériaux & Technique</h2>
               <p className="text-[#f5f0e8]/75 leading-relaxed text-sm mb-4">
                 Acrylique au couteau. Elle utilise des matériaux précieux — feuilles d&apos;or, verre coloré —
                 qui transforment la lumière. L&apos;espace devient lieu de vibration, de mouvement et d&apos;éclat.
@@ -88,11 +88,11 @@ export default function AboutPage() {
               <p className="text-[0.6rem] tracking-[0.3em] uppercase text-[#f5f0e8]/30 mb-5">Contact</p>
               <div className="flex flex-col gap-3">
                 <a href="mailto:galerieani.pro@gmail.com"
-                  className="inline-flex items-center gap-3 text-sm text-[#c9a84c] hover:text-[#f5f0e8] transition-colors duration-300">
-                  <span className="w-4 h-px bg-[#c9a84c]" />galerieani.pro@gmail.com
+                  className="inline-flex items-center gap-3 text-sm text-black hover:text-[#f5f0e8] transition-colors duration-300">
+                  <span className="w-4 h-px bg-black" />galerieani.pro@gmail.com
                 </a>
                 <a href="https://instagram.com/anissheart" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-sm text-[#f5f0e8]/50 hover:text-[#c9a84c] transition-colors duration-300">
+                  className="inline-flex items-center gap-3 text-sm text-[#f5f0e8]/50 hover:text-black transition-colors duration-300">
                   <span className="w-4 h-px bg-white/30" />@anissheart
                 </a>
                 <a href="tel:+33760989190"
@@ -109,7 +109,7 @@ export default function AboutPage() {
       <section className="border-t border-white/5 py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-[#c9a84c] mb-3">Morocco Collection Opening</p>
+            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-black mb-3">Morocco Collection Opening</p>
             <h2 className="text-2xl font-light tracking-widest">Série 1 — Paris · Bordeaux · Casablanca</h2>
             <div className="divider-gold" />
           </div>
@@ -143,9 +143,9 @@ export default function AboutPage() {
       <section className="border-t border-white/5 py-20 px-6">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-[#c9a84c] mb-4">Services</p>
+            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-black mb-4">Services</p>
             <h2 className="text-2xl font-light tracking-widest mb-4">Art Leasing</h2>
-            <div className="w-8 h-px bg-[#c9a84c] mb-6" />
+            <div className="w-8 h-px bg-black mb-6" />
             <p className="text-[#f5f0e8]/65 text-sm leading-relaxed mb-4">
               Un service de location d&apos;art est proposé aux entreprises souhaitant enrichir leur espace de travail.
               Ce choix permet de renouveler régulièrement les œuvres et de soutenir l&apos;art contemporain.
@@ -154,7 +154,7 @@ export default function AboutPage() {
               Les clients bénéficient d&apos;avantages fiscaux et sont accompagnés par nos avocats fiscalistes spécialisés.
             </p>
             <a href="mailto:galerieani.pro@gmail.com"
-              className="text-xs tracking-[0.25em] uppercase text-[#c9a84c] border-b border-[#c9a84c]/40 pb-1 hover:border-[#c9a84c] transition-colors duration-300">
+              className="text-xs tracking-[0.25em] uppercase text-black border-b border-black/40 pb-1 hover:border-black transition-colors duration-300">
               Nous contacter →
             </a>
           </div>
@@ -176,7 +176,7 @@ export default function AboutPage() {
             lightness and complexity, light and darkness.&rdquo;
           </p>
           <div className="divider-gold" />
-          <cite className="text-[0.65rem] tracking-[0.35em] uppercase text-[#c9a84c] not-italic">Anissa Hafidi</cite>
+          <cite className="text-[0.65rem] tracking-[0.35em] uppercase text-black not-italic">Anissa Hafidi</cite>
         </blockquote>
       </section>
 
