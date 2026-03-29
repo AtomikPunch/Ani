@@ -91,23 +91,34 @@ export default function GalleryClient() {
   const ref1 = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    document.body.style.transition = "background 0.12s linear";
+    document.body.style.backgroundAttachment = "unset";
+    document.body.style.background = `rgb(${C2.r},${C2.g},${C2.b})`;
+
     const handle = () => {
       const s2 = ref2.current;
       const s1 = ref1.current;
       if (!s2 || !s1) return;
-      const s2Bottom = s2.getBoundingClientRect().bottom + window.scrollY;
-      const s1Top = s1.getBoundingClientRect().top + window.scrollY;
-      const mid = window.scrollY + window.innerHeight / 2;
+      const s2Bottom = s2.getBoundingClientRect().bottom;
+      const s1Top = s1.getBoundingClientRect().top;
+      const mid = window.innerHeight / 2;
       let t = 0;
       if (mid > s2Bottom) {
         const zone = s1Top - s2Bottom;
         t = zone > 0 ? (mid - s2Bottom) / zone : 1;
       }
-      setBg(`rgb(${lerp(C2.r,C1.r,t)},${lerp(C2.g,C1.g,t)},${lerp(C2.b,C1.b,t)})`);
+      const color = `rgb(${lerp(C2.r,C1.r,t)},${lerp(C2.g,C1.g,t)},${lerp(C2.b,C1.b,t)})`;
+      setBg(color);
+      document.body.style.background = color;
     };
-    window.addEventListener("scroll", handle, { passive: true });
+    document.addEventListener("scroll", handle, { passive: true, capture: true });
     handle();
-    return () => window.removeEventListener("scroll", handle);
+    return () => {
+      document.removeEventListener("scroll", handle, { capture: true });
+      document.body.style.background = "";
+      document.body.style.backgroundAttachment = "";
+      document.body.style.transition = "";
+    };
   }, []);
 
   return (
