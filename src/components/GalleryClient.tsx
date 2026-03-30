@@ -5,25 +5,25 @@ import Image from "next/image";
 const serie2 = [
   {
     title: "After Tea", subtitle: "Autoportrait",
-    size: "50×50 cm", price: "1 300 €",
+    size: "50×50 cm", price: "",
     image: "/images/p10_img1.jpeg",
     description: "Bleu Majorelle, orange ocre terreux, noir Soulages. Le rituel du thé marocain étendu en méditation.",
   },
   {
     title: "The End", subtitle: "Al Hank Lighthouse · Casablanca",
-    size: "130×97 cm", price: "3 000 €",
+    size: "130×97 cm", price: "",
     image: "/images/p07_img2.png",
     description: "La fin non comme silence, mais comme transformation — un rythme qui résonne à travers lumière, ombre et émotion.",
   },
   {
     title: "Réminiscence", subtitle: "Blue Klein & Majorelle",
-    size: "80×80 cm", price: "2 100 €",
+    size: "80×80 cm", price: "",
     image: "/images/p12_img1.jpeg",
     description: "Un cercle se déploie depuis le centre — le bleu devient une lumière dense, presque tactile, espace de méditation.",
   },
   {
     title: "Dyptique Majorelle", subtitle: "Silence absolu",
-    size: "60×60 cm", price: "1 600 €",
+    size: "60×60 cm", price: "",
     image: "/images/p14_img1.jpeg",
     description: "Le bleu et l'orange s'opposent. La ligne centrale marque la frontière entre ces deux souffles et deux mondes.",
   },
@@ -32,25 +32,25 @@ const serie2 = [
 const serie1 = [
   {
     title: "Casablanca", subtitle: "2023 · Édition limitée",
-    size: undefined, price: "Best Seller",
+    size: "", price: "",
     image: "/images/p05_img1.jpeg",
     description: "La plus vendue et reproduite de la série. Casablanca marque le début du voyage de Galerie Ani.",
   },
   {
     title: "Tanger III", subtitle: "The Sounds of Tangier",
-    size: undefined, price: "Sur demande",
+    size: "", price: "",
     image: "/images/p06_img1.png",
     description: "Le vert, symbole de guérison, de patrimoine et d'identité enracinée, traverse ce tableau.",
   },
   {
     title: "Marrakech", subtitle: "The Red City",
-    size: undefined, price: "1 900 €",
+    size: "", price: "",
     image: "https://static.wixstatic.com/media/b18fbb_25782a6965fe4515aad6aaa7c01f9f62~mv2.png",
     description: "Klein et Majorelle bleu, orange des remparts, noir de Soulages — les contrastes de la ville ocre.",
   },
   {
     title: "Tanger II", subtitle: "Cities of Atlas",
-    size: undefined, price: "Sur demande",
+    size: "", price: "",
     image: "https://static.wixstatic.com/media/b18fbb_d0186b2a11c54f1aa2f4a6a7faed90f4~mv2.png",
     description: "Tanger, carrefour entre continents et empires, porte le poids des siècles dans son silence.",
   },
@@ -64,7 +64,7 @@ function ArtworkCard({ a }: { a: typeof serie2[0] }) {
           className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
           unoptimized={a.image.startsWith("http")} />
         <div className="artwork-overlay">
-          <p className="text-black text-[0.6rem] tracking-widest uppercase mb-1">{a.subtitle}</p>
+          <p className="text-white text-[0.6rem] tracking-widest uppercase mb-1">{a.subtitle}</p>
           <p className="text-white text-sm font-light tracking-widest uppercase">{a.title}</p>
           <p className="text-white/60 text-xs mt-1">{a.size ? `${a.size} · ` : ""}{a.price}</p>
         </div>
@@ -132,7 +132,7 @@ export default function GalleryClient() {
             <div className="divider-gold" />
             <p className="text-sm text-[#f5f0e8]/50 max-w-lg mx-auto leading-relaxed">
               Acrylique au couteau · Or · Ocre · Couleurs des villes du Maroc<br />
-              Paris · Bordeaux · Casablanca · 2023–2024
+              Paris · Casablanca · 2023–2024
             </p>
           </div>
 

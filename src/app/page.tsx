@@ -25,15 +25,15 @@ export default function Home() {
             Morocco Collection · Limited Edition
           </p>
           <h1 className="text-5xl md:text-7xl font-light tracking-[0.08em] leading-tight mb-4">
-            Anissa<br /><span className="italic text-black">Hafidi</span>
+            Anissa<br /><span className="font-light">Hafidi</span>
           </h1>
           <div className="divider-gold" />
           <p className="text-xs tracking-[0.35em] uppercase text-[#f5f0e8]/40 mb-2">Artiste Peintre · Anissheart</p>
-          <p className="text-[#f5f0e8]/50 text-xs mb-10">Paris · Casablanca · Genève · Bordeaux</p>
+          <p className="text-[#f5f0e8]/50 text-xs mb-10">Paris · Casablanca · Genève</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/gallery"
-              className="px-8 py-3 text-xs tracking-[0.25em] uppercase border border-black text-black hover:bg-black hover:text-black transition-all duration-300">
+              className="px-8 py-3 text-xs tracking-[0.25em] uppercase border border-white/20 text-[#f5f0e8]/70 hover:border-white/50 hover:text-[#f5f0e8] transition-all duration-300">
               Voir les Œuvres
             </Link>
             <Link href="/about"
@@ -49,12 +49,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── WHY MOROCCO — fond dunes + peinture ── */}
-      <section className="relative py-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image src="/images/p02_img1.png" alt="Sahara et Majorelle" fill className="object-cover opacity-20" />
-          <div className="absolute inset-0 bg-black/65" />
-        </div>
+      {/* ── WHY MOROCCO — fond orange ── */}
+      <section className="relative py-24 px-6 overflow-hidden bg-[#b5541e]">
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <p className="text-[0.65rem] tracking-[0.4em] uppercase text-black mb-4">Why Morocco ?</p>
           <h2 className="text-2xl md:text-3xl font-light tracking-widest mb-4">Une symphonie de vie</h2>

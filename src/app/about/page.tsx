@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const metadata = {
   title: "About — Anissa Hafidi · Anissheart",
-  description: "Artiste franco-marocaine entre Paris, Casablanca, Bordeaux et Genève.",
+  description: "Artiste franco-marocaine entre Paris, Casablanca et Genève.",
 };
 
 export default function AboutPage() {
@@ -36,7 +36,7 @@ export default function AboutPage() {
               <div className="absolute -bottom-3 -right-3 w-full h-full border border-black/30 pointer-events-none" />
             </div>
             <div className="mt-8 flex flex-col gap-3">
-              {["Paris", "Casablanca", "Bordeaux", "Genève"].map((city) => (
+              {["Paris", "Casablanca", "Genève"].map((city) => (
                 <div key={city} className="flex items-center gap-3">
                   <span className="w-6 h-px bg-black" />
                   <span className="text-xs tracking-[0.25em] uppercase text-[#f5f0e8]/50">{city}</span>
@@ -50,7 +50,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-sm tracking-[0.3em] uppercase text-black mb-5">Qui suis-je</h2>
               <p className="text-[#f5f0e8]/75 leading-relaxed text-sm mb-4">
-                Ani est une artiste franco-marocaine qui partage sa vie entre Paris, Casablanca, Bordeaux et Genève.
+                Ani est une artiste franco-marocaine qui partage sa vie entre Paris, Casablanca et Genève.
                 Depuis son enfance, le dessin est pour elle un langage naturel et instinctif, hérité de son père, passionné d&apos;art.
               </p>
               <p className="text-[#f5f0e8]/75 leading-relaxed text-sm">
@@ -95,10 +95,6 @@ export default function AboutPage() {
                   className="inline-flex items-center gap-3 text-sm text-[#f5f0e8]/50 hover:text-black transition-colors duration-300">
                   <span className="w-4 h-px bg-white/30" />@anissheart
                 </a>
-                <a href="tel:+33760989190"
-                  className="inline-flex items-center gap-3 text-sm text-[#f5f0e8]/40 hover:text-[#f5f0e8] transition-colors duration-300">
-                  <span className="w-4 h-px bg-white/20" />+33 7 60 98 91 90
-                </a>
               </div>
             </div>
           </div>
@@ -110,7 +106,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-[0.65rem] tracking-[0.4em] uppercase text-black mb-3">Morocco Collection Opening</p>
-            <h2 className="text-2xl font-light tracking-widest">Série 1 — Paris · Bordeaux · Casablanca</h2>
+            <h2 className="text-2xl font-light tracking-widest">Série 1 — Paris · Casablanca</h2>
             <div className="divider-gold" />
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
