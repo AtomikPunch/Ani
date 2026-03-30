@@ -30,10 +30,9 @@ export default function AboutPage() {
 
           {/* Photo — Ani devant ses œuvres */}
           <div className="relative">
-            <div className="relative overflow-hidden">
-              <Image src="/images/p02_img2.png" alt="Anissa Hafidi devant ses œuvres"
-                width={800} height={1000} className="w-full object-cover" />
-              <div className="absolute -bottom-3 -right-3 w-full h-full border border-black/30 pointer-events-none" />
+            <div className="relative overflow-hidden aspect-[3/4]">
+              <Image src="/images/About.jpg" alt="Anissa Hafidi devant ses œuvres"
+                fill className="object-cover object-center" />
             </div>
             <div className="mt-8 flex flex-col gap-3">
               {["Paris", "Casablanca", "Genève"].map((city) => (

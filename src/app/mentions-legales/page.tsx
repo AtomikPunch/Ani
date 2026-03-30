@@ -23,24 +23,26 @@ export default function MentionsLegalesPage() {
         <p className="text-[0.65rem] tracking-[0.5em] uppercase text-black mb-4">Informations légales</p>
         <h1 className="text-4xl md:text-5xl font-light tracking-[0.1em] mb-3">Mentions Légales</h1>
         <div className="divider-gold" />
-        <p className="text-xs tracking-[0.3em] uppercase text-[#f5f0e8]/30">Anissa Hafidi · Anissheart</p>
+        <p className="text-xs tracking-[0.3em] uppercase text-[#f5f0e8]/30">GalerieAni · Anissa Hafidi</p>
       </section>
 
       {/* ── CONTENU ── */}
       <section className="max-w-3xl mx-auto px-6 py-20 flex flex-col gap-10">
 
         <Section label="Propriétaire du site">
-          <p>Madame <span className="text-[#f5f0e8]/90">Anissa Hafidi</span></p>
-          <p>N° SIREN : <span className="text-[#f5f0e8]/40 italic">— à compléter —</span></p>
+          <p>Madame <span className="text-[#f5f0e8]/90">Anissa HAFIDI</span></p>
+          <p>Exerçant à titre individuel</p>
+          <p>N° SIREN : <span className="text-[#f5f0e8]/40 italic">952230472</span></p>
+          <p>N° de TVA intracommunautaire : <span className="text-[#f5f0e8]/40 italic">— à compléter —</span></p>
         </Section>
 
         <Section label="Directrice de la publication">
-          <p>Madame <span className="text-[#f5f0e8]/90">Anissa Hafidi</span></p>
+          <p>Madame <span className="text-[#f5f0e8]/90">Anissa HAFIDI</span></p>
           <p>
             Contact :{" "}
-            <a href="mailto:galeriani.pro@gmail.com"
+            <a href="mailto:galerieani.pro@gmail.com"
               className="text-black hover:text-[#f5f0e8] transition-colors duration-300">
-              galeriani.pro@gmail.com
+              galerieani.pro@gmail.com
             </a>
           </p>
         </Section>
@@ -59,22 +61,18 @@ export default function MentionsLegalesPage() {
         </Section>
 
         <Section label="Crédits">
-          <p>Identité visuelle & photographies : <span className="text-[#f5f0e8]/90">Anissa Hafidi</span></p>
-          <p>Développement & design du site : <span className="text-[#f5f0e8]/90">Jad Yamout</span></p>
-          <p className="pt-2 text-[#f5f0e8]/50 text-xs leading-relaxed">
-            Les photographies utilisées sur ce site sont la propriété exclusive d&apos;Anissa Hafidi.
-            Toute reproduction, même partielle, est interdite sans autorisation préalable.
-          </p>
+          <p>Identité visuelle : <span className="text-[#f5f0e8]/90">Madame Anissa HAFIDI</span></p>
+          <p>Photographies : <span className="text-[#f5f0e8]/90">Anissa HAFIDI</span></p>
+          <p>Développement du site et du design : <span className="text-[#f5f0e8]/90">Anissa HAFIDI & Jad YAMOUT</span></p>
         </Section>
 
         <Section label="Propriété intellectuelle">
           <p className="text-[#f5f0e8]/50 text-xs leading-relaxed">
             Le responsable de l&apos;identité visuelle, du développement, du design et du site exige que son nom
-            soit mentionné à côté de chaque utilisation de ses œuvres. Ne pas mentionner la paternité de l&apos;œuvre
-            constitue une atteinte au droit moral de l&apos;auteur et contrevient aux dispositions de la loi N° 17-97
-            relative à la protection de la propriété industrielle, Dahir n° 1-00-19 du 9 Kaada 1420 (15 Février 2000).
+            soit inscrit à côté de chaque utilisation de ses œuvres. Ne pas mentionner la paternité de l&apos;œuvre
+            constitue une atteinte au droit moral de l&apos;auteur et contrevient à l&apos;article L. 121-1 du CPI.
           </p>
-          <p className="text-[#f5f0e8]/40 text-xs">Tous droits réservés.</p>
+          <p className="text-[#f5f0e8]/40 text-xs">Tous droits réservés. GalerieAni</p>
         </Section>
 
       </section>
