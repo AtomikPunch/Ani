@@ -59,7 +59,6 @@ export default async function MentionsLegalesPage({
           <p>{t.owner_p1} <span className="text-[#f5f0e8]/90">Anissa HAFIDI</span></p>
           <p>{t.owner_p2}</p>
           <p>N° SIREN : <span className="text-[#f5f0e8]/40 italic">952230472</span></p>
-          <p>N° de TVA intracommunautaire : <span className="text-[#f5f0e8]/40 italic">— à compléter —</span></p>
         </Section>
 
         <Section label={t.section_director}>
