@@ -1,13 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
+import { notFound } from "next/navigation";
+import { hasLocale, getDictionary } from "./dictionaries";
 
-const WIX = "https://static.wixstatic.com/media";
+export default async function Home({ params }: PageProps<"/[lang]">) {
+  const { lang } = await params;
 
-export default function Home() {
+  if (!hasLocale(lang)) notFound();
+
+  const dict = await getDictionary(lang);
+  const t = dict.home;
+
   return (
     <div className="relative min-h-screen flex flex-col">
 
-      {/* ── HERO — Ani au coucher de soleil avec "The End" ── */}
+      {/* ── HERO ── */}
       <section className="relative flex items-center justify-center min-h-screen overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
@@ -28,17 +35,23 @@ export default function Home() {
             Anissa<br /><span className="font-light">Hafidi</span>
           </h1>
           <div className="divider-gold" />
-          <p className="text-xs tracking-[0.35em] uppercase text-[#f5f0e8]/40 mb-2">Artiste Peintre · Anissheart</p>
+          <p className="text-xs tracking-[0.35em] uppercase text-[#f5f0e8]/40 mb-2">
+            {t.tagline}
+          </p>
           <p className="text-[#f5f0e8]/50 text-xs mb-10">Paris · Casablanca · Genève</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/gallery"
-              className="px-8 py-3 text-xs tracking-[0.25em] uppercase border border-white/20 text-[#f5f0e8]/70 hover:border-white/50 hover:text-[#f5f0e8] transition-all duration-300">
-              Voir les Œuvres
+            <Link
+              href={`/${lang}/gallery`}
+              className="px-8 py-3 text-xs tracking-[0.25em] uppercase border border-white/20 text-[#f5f0e8]/70 hover:border-white/50 hover:text-[#f5f0e8] transition-all duration-300"
+            >
+              {t.cta_gallery}
             </Link>
-            <Link href="/about"
-              className="px-8 py-3 text-xs tracking-[0.25em] uppercase border border-white/20 text-[#f5f0e8]/70 hover:border-white/50 hover:text-[#f5f0e8] transition-all duration-300">
-              À Propos
+            <Link
+              href={`/${lang}/about`}
+              className="px-8 py-3 text-xs tracking-[0.25em] uppercase border border-white/20 text-[#f5f0e8]/70 hover:border-white/50 hover:text-[#f5f0e8] transition-all duration-300"
+            >
+              {t.cta_about}
             </Link>
           </div>
         </div>
@@ -49,16 +62,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── WHY MOROCCO — fond orange ── */}
+      {/* ── WHY MOROCCO ── */}
       <section className="relative py-24 px-6 overflow-hidden bg-[#b5541e]">
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <p className="text-[0.65rem] tracking-[0.4em] uppercase text-black mb-4">Why Morocco ?</p>
-          <h2 className="text-2xl md:text-3xl font-light tracking-widest mb-4">Une symphonie de vie</h2>
+          <h2 className="text-2xl md:text-3xl font-light tracking-widest mb-4">
+            {t.why_morocco_title}
+          </h2>
           <div className="divider-gold" />
           <p className="text-[#f5f0e8]/65 text-sm leading-relaxed max-w-xl mx-auto">
-            Ani célèbre l&apos;âme de son pays, où les battements de cœur résonnent en harmonie avec ceux de ses habitants.
-            Chaque tableau est une pulsation — un battement suspendu entre la joie et la mélancolie,
-            la légèreté et la complexité, la lumière et l&apos;obscurité.
+            {t.why_morocco_text}
           </p>
         </div>
       </section>
@@ -67,23 +80,35 @@ export default function Home() {
       <section className="py-20 px-6 border-t border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-black mb-3">Série 3 · À venir · 2026</p>
-            <h2 className="text-2xl md:text-3xl font-light tracking-widest">Huile sur toile · Désert du Sahara</h2>
+            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-black mb-3">
+              {t.serie3_label}
+            </p>
+            <h2 className="text-2xl md:text-3xl font-light tracking-widest">
+              {t.serie3_title}
+            </h2>
             <div className="divider-gold" />
           </div>
 
           <div className="max-w-sm mx-auto">
             <div className="artwork-card group">
-              <Image src="/images/Série3.png" alt="La verticale et l'étendue — Désert du Sahara marocain, Merzouga"
-                width={400} height={400}
-                className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105" />
+              <Image
+                src="/images/Série3.png"
+                alt="La verticale et l'étendue — Désert du Sahara marocain, Merzouga"
+                width={400}
+                height={400}
+                className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
+              />
               <div className="artwork-overlay">
-                <p className="text-white text-xs tracking-widest uppercase">La verticale et l&apos;étendue</p>
-                <p className="text-black text-xs mt-1">Huile sur toile · 60×50 cm · 2026</p>
+                <p className="text-white text-xs tracking-widest uppercase">
+                  {t.serie3_artwork_title}
+                </p>
+                <p className="text-black text-xs mt-1">
+                  {t.serie3_artwork_medium}
+                </p>
               </div>
             </div>
             <p className="text-[#f5f0e8]/40 text-[0.65rem] tracking-widest uppercase text-center mt-3">
-              Merzouga · Désert du Sahara marocain
+              {t.serie3_artwork_location}
             </p>
           </div>
         </div>
@@ -93,10 +118,16 @@ export default function Home() {
       <section className="py-20 px-6 border-t border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-black mb-3">Série 2 · Echoes of Heart</p>
-            <h2 className="text-2xl md:text-3xl font-light tracking-widest">Bleu Klein · Orange · Noir Soulages</h2>
+            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-black mb-3">
+              {t.serie2_label}
+            </p>
+            <h2 className="text-2xl md:text-3xl font-light tracking-widest">
+              {t.serie2_title}
+            </h2>
             <div className="divider-gold" />
-            <p className="text-[#f5f0e8]/50 text-sm">Acrylique au couteau · Paris · The Muisca Gallery · 2025</p>
+            <p className="text-[#f5f0e8]/50 text-sm">
+              Acrylique au couteau · Paris · The Muisca Gallery · 2025
+            </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -107,9 +138,14 @@ export default function Home() {
               { src: "/images/Série2.jpg", title: "The End", price: "3 000 €" },
             ].map((a) => (
               <div key={a.title} className="artwork-card group">
-                <Image src={a.src} alt={a.title} width={400} height={400}
+                <Image
+                  src={a.src}
+                  alt={a.title}
+                  width={400}
+                  height={400}
                   className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
-                  unoptimized={a.src.startsWith("http")} />
+                  unoptimized={a.src.startsWith("http")}
+                />
                 <div className="artwork-overlay">
                   <p className="text-white text-xs tracking-widest uppercase">{a.title}</p>
                   <p className="text-black text-xs mt-1">{a.price}</p>
@@ -119,9 +155,11 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-10">
-            <Link href="/gallery"
-              className="inline-block px-10 py-3 text-xs tracking-[0.25em] uppercase border border-black text-black hover:bg-black hover:text-black transition-all duration-300">
-              Découvrir la collection complète
+            <Link
+              href={`/${lang}/gallery`}
+              className="inline-block px-10 py-3 text-xs tracking-[0.25em] uppercase border border-black text-black hover:bg-black hover:text-black transition-all duration-300"
+            >
+              {t.serie2_cta}
             </Link>
           </div>
         </div>
@@ -131,26 +169,34 @@ export default function Home() {
       <section className="py-20 px-6 border-t border-white/5">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="relative overflow-hidden">
-            <Image src="/images/p04_img2.png" alt="Marrakech Set" width={800} height={600} className="w-full object-cover" />
+            <Image
+              src="/images/p04_img2.png"
+              alt="Marrakech Set"
+              width={800}
+              height={600}
+              className="w-full object-cover"
+            />
             <div className="absolute top-4 left-4 bg-black text-black text-[0.6rem] tracking-[0.2em] uppercase px-3 py-1">
               Best Seller
             </div>
           </div>
           <div>
-            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-black mb-4">Série 1 · Cities of Atlas</p>
+            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-black mb-4">
+              {t.serie1_label}
+            </p>
             <h2 className="text-2xl md:text-3xl font-light tracking-widest mb-4">Marrakech Set</h2>
             <div className="w-8 h-px bg-black mb-6" />
             <p className="text-[#f5f0e8]/65 text-sm leading-relaxed mb-4">
-              Ce triptyque capture les contrastes de la ville ocre. Le bleu Klein et Majorelle évoque
-              les jardins Majorelle, havre de calme et de contemplation.
+              {t.serie1_p1}
             </p>
             <p className="text-[#f5f0e8]/65 text-sm leading-relaxed mb-8">
-              L&apos;orange renvoie à la lumière chaude sur les remparts, et le noir de Soulages,
-              dense et subtil, rappelle les anciennes portes, les nuits étoilées et les mystères de la Médina.
+              {t.serie1_p2}
             </p>
-            <Link href="/gallery"
-              className="text-xs tracking-[0.25em] uppercase text-black border-b border-black/40 pb-1 hover:border-black transition-colors duration-300">
-              Voir la Série 1 →
+            <Link
+              href={`/${lang}/gallery`}
+              className="text-xs tracking-[0.25em] uppercase text-black border-b border-black/40 pb-1 hover:border-black transition-colors duration-300"
+            >
+              {t.serie1_cta}
             </Link>
           </div>
         </div>
