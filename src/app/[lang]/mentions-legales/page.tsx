@@ -93,6 +93,17 @@ export default async function MentionsLegalesPage({
           <p>{t.credits_visual} : <span className="text-[#f5f0e8]/90">{t.owner_p1} Anissa HAFIDI</span></p>
           <p>{t.credits_photos} : <span className="text-[#f5f0e8]/90">Anissa HAFIDI</span></p>
           <p>{t.credits_dev} : <span className="text-[#f5f0e8]/90">Anissa HAFIDI & Jad YAMOUT</span></p>
+          <p className="text-[#f5f0e8]/40 text-xs leading-relaxed">{t.credits_dev_detail}</p>
+          <p>
+            <a
+              href="https://theexploitchronicle.ovh/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#f5f0e8]/40 text-xs hover:text-[#f5f0e8]/70 transition-colors duration-300"
+            >
+              ↗ {t.credits_dev_portfolio}
+            </a>
+          </p>
         </Section>
 
         <Section label={t.section_ip}>

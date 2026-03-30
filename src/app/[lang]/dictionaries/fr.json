@@ -94,6 +94,8 @@
     "credits_visual": "Identité visuelle",
     "credits_photos": "Photographies",
     "credits_dev": "Développement du site et du design",
+    "credits_dev_detail": "Le site a été développé en étroite collaboration avec l'artiste Anissa Hafidi, dont la direction artistique est fondée sur une esthétique épurée, une palette de tons chauds et neutres, et une attention particulière portée à la lumière et à la matière. Chaque décision de conception typographie fine à l'espacement généreux, fond sombre valorisant les œuvres, navigation minimaliste a été pensée pour s'effacer au profit des peintures et laisser l'œuvre occuper tout l'espace.",
+    "credits_dev_portfolio": "theexploitchronicle.ovh - Jad YAMOUT",
     "contact_label": "Contact"
   },
   "privacy": {
