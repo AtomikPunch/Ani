@@ -2,6 +2,17 @@
 
 import Image from "next/image";
 
+const serie3 = [
+  {
+    title: "La verticale et l'étendue",
+    subtitle: "Désert du Sahara marocain · Merzouga",
+    size: "60×50 cm",
+    price: "",
+    image: "/images/Série3.png",
+    description: "Huile sur toile, 2026. La verticalité du regard face à l'immensité du Sahara — Merzouga comme point de suspension entre ciel et sable.",
+  },
+];
+
 const serie2 = [
   {
     title: "After Tea", subtitle: "Autoportrait",
@@ -12,7 +23,7 @@ const serie2 = [
   {
     title: "The End", subtitle: "Al Hank Lighthouse · Casablanca",
     size: "130×97 cm", price: "",
-    image: "/images/p07_img2.png",
+    image: "/images/Série2.jpg",
     description: "La fin non comme silence, mais comme transformation — un rythme qui résonne à travers lumière, ombre et émotion.",
   },
   {
@@ -80,6 +91,29 @@ function ArtworkCard({ a }: { a: typeof serie2[0] }) {
 export default function GalleryClient() {
   return (
     <div className="min-h-screen">
+
+      {/* ══ SÉRIE 3 ══ */}
+      <div className="px-6 md:px-12 pt-28 pb-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-[0.6rem] tracking-[0.5em] uppercase text-black/80 mb-3">Morocco Collection · 2026</p>
+            <h2 className="text-4xl md:text-5xl font-light tracking-[0.1em]">Série III</h2>
+            <p className="text-xs tracking-[0.35em] uppercase text-[#f5f0e8]/40 mt-2 mb-1">À venir</p>
+            <div className="divider-gold" />
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
+            {serie3.map((a) => <ArtworkCard key={a.title} a={a} />)}
+          </div>
+        </div>
+      </div>
+
+      {/* ══ TRANSITION ══ */}
+      <div className="py-14 flex flex-col items-center gap-3 opacity-20 pointer-events-none">
+        <div className="w-px h-12 bg-gradient-to-b from-[#f5f0e8] to-transparent" />
+        <div className="w-12 h-px bg-black" />
+        <div className="w-px h-12 bg-gradient-to-t from-[#f5f0e8] to-transparent" />
+      </div>
 
       {/* ══ SÉRIE 2 ══ */}
       <div className="px-6 md:px-12 pt-28 pb-20">

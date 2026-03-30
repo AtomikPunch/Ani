@@ -63,6 +63,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── SÉRIE 3 PREVIEW ── */}
+      <section className="py-20 px-6 border-t border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-black mb-3">Série 3 · À venir · 2026</p>
+            <h2 className="text-2xl md:text-3xl font-light tracking-widest">Huile sur toile · Désert du Sahara</h2>
+            <div className="divider-gold" />
+          </div>
+
+          <div className="max-w-sm mx-auto">
+            <div className="artwork-card group">
+              <Image src="/images/p18_img1.png" alt="La verticale et l'étendue — Désert du Sahara marocain, Merzouga"
+                width={400} height={400}
+                className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="artwork-overlay">
+                <p className="text-white text-xs tracking-widest uppercase">La verticale et l&apos;étendue</p>
+                <p className="text-black text-xs mt-1">Huile sur toile · 60×50 cm · 2026</p>
+              </div>
+            </div>
+            <p className="text-[#f5f0e8]/40 text-[0.65rem] tracking-widest uppercase text-center mt-3">
+              Merzouga · Désert du Sahara marocain
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── SÉRIE 2 PREVIEW ── */}
       <section className="py-20 px-6 border-t border-white/5">
         <div className="max-w-6xl mx-auto">
@@ -78,7 +104,7 @@ export default function Home() {
               { src: "/images/p10_img1.jpeg", title: "After Tea", price: "1 300 €" },
               { src: "/images/p14_img1.jpeg", title: "Dyptique Majorelle", price: "1 600 €" },
               { src: "/images/p12_img1.jpeg", title: "Réminiscence", price: "2 100 €" },
-              { src: `${WIX}/b18fbb_393330155b9d46c2b9718c519316d956~mv2.png`, title: "The End", price: "3 000 €" },
+              { src: "/images/p17_img8.jpeg", title: "The End", price: "3 000 €" },
             ].map((a) => (
               <div key={a.title} className="artwork-card group">
                 <Image src={a.src} alt={a.title} width={400} height={400}

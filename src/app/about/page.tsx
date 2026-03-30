@@ -50,37 +50,61 @@ export default function AboutPage() {
             <div>
               <h2 className="text-sm tracking-[0.3em] uppercase text-black mb-5">Qui suis-je</h2>
               <p className="text-[#f5f0e8]/75 leading-relaxed text-sm mb-4">
-                Ani est une artiste franco-marocaine qui partage sa vie entre Paris, Casablanca et Genève.
-                Depuis son enfance, le dessin est pour elle un langage naturel et instinctif, hérité de son père, passionné d&apos;art.
+                Ani est une artiste franco-marocaine, partageant sa vie entre Paris, Casablanca et Genève.
+                Depuis son enfance, le dessin a toujours été pour elle un langage naturel, presque instinctif,
+                qu&apos;elle a hérité de son père, passionné d&apos;art. Cet héritage s&apos;est imposé au fil
+                du temps comme une base solide de son identité créative.
               </p>
               <p className="text-[#f5f0e8]/75 leading-relaxed text-sm">
-                À la suite d&apos;une crise de santé personnelle — des problèmes cardiaques — elle a transformé sa pratique
-                artistique en une nécessité vitale et un moyen d&apos;exprimer ses émotions à travers la peinture.
+                Mais c&apos;est à la suite d&apos;une épreuve personnelle, marquée par des problèmes cardiaques,
+                qui a donné une nouvelle dimension à sa pratique : la transformer en une nécessité vitale,
+                un moyen d&apos;exprimer et de sublimer ce que les mots ne pouvaient contenir.
               </p>
             </div>
 
             <div>
               <h2 className="text-sm tracking-[0.3em] uppercase text-black mb-5">L&apos;électrocardiogramme comme langage</h2>
               <p className="text-[#f5f0e8]/75 leading-relaxed text-sm mb-4">
-                Son travail est centré sur l&apos;électrocardiogramme — le battement du cœur — comme matrice de son
-                langage pictural. Elle varie les rythmes selon les émotions : longues ou courtes pulsations,
-                traits fins ou épais, tracés sombres ou lumineux.
+                Ani a choisi de peindre, de faire vibrer sur de grandes toiles ce qui constitue le fil le plus précieux
+                de toute existence : le battement du cœur. L&apos;électrocardiogramme est devenu la matrice de son
+                langage pictural, une texture vibrante qui traverse son œuvre. Elle en varie les rythmes selon ses
+                émotions : battements longs ou courts, traits fins ou épais, sombres ou lumineux. Ainsi, ses peintures
+                traduisent la vérité de la vie dans ses contrastes, ses phases d&apos;élan et ses moments de chute.
+              </p>
+              <p className="text-[#f5f0e8]/75 leading-relaxed text-sm mb-4">
+                Son tout premier tableau, peint il y a trois ans pour sa sœur aînée, fut une révélation. Depuis ce
+                jour, elle n&apos;a plus quitté son pinceau. Ses œuvres accumulent les ventes depuis plus d&apos;un
+                an via sa galerie en ligne et ses réseaux sociaux, touchant un public international sensible à son
+                approche singulière.
               </p>
               <p className="text-[#f5f0e8]/75 leading-relaxed text-sm">
-                Née franco-marocaine, l&apos;artiste retrace dans ses toiles des histoires personnelles et collectives
-                à travers des villes en couches, des textures et des paysages. Sa collection est un voyage immersif au Maroc.
+                La première collection, « Morocco Collection », est un hommage à son pays d&apos;origine. Chaque toile
+                illustre la singularité d&apos;une ville, sa mémoire, sa culture et son héritage. À travers ce cycle,
+                Ani convoque ses souvenirs d&apos;enfance et les entremêle avec son présent, mettant en scène dans ses
+                toiles un espace-temps où se croisent la France et le Maroc.
               </p>
             </div>
 
             <div>
-              <h2 className="text-sm tracking-[0.3em] uppercase text-black mb-5">Matériaux & Technique</h2>
+              <h2 className="text-sm tracking-[0.3em] uppercase text-black mb-5">Matériaux & Esthétique</h2>
               <p className="text-[#f5f0e8]/75 leading-relaxed text-sm mb-4">
-                Acrylique au couteau. Elle utilise des matériaux précieux — feuilles d&apos;or, verre coloré —
-                qui transforment la lumière. L&apos;espace devient lieu de vibration, de mouvement et d&apos;éclat.
+                Dans ses œuvres, l&apos;espace devient un lieu de vibration, de mouvement, de scintillement.
+                Les matériaux précieux qu&apos;elle utilise comme les feuilles d&apos;or, suspendues sans être
+                fixées créent une autonomie propre, illustrant la mouvance et la métaphore du « cœur en or ».
+                Associés aux reflets du verre coloré, ils transforment la lumière et renouvellent sans cesse
+                l&apos;apparence de ses toiles selon l&apos;air et le souffle ambiant.
+              </p>
+              <p className="text-[#f5f0e8]/75 leading-relaxed text-sm mb-4">
+                L&apos;artiste brouille volontairement les pistes : elle refuse au spectateur le confort
+                d&apos;une lecture simplifiée de l&apos;Histoire ou de la société. Elle préfère créer une
+                séquence d&apos;émotions, une suite de réminiscences et d&apos;introspections, une exaltation
+                des sens qui nous oblige à accueillir le monde dans sa légèreté comme dans sa complexité.
               </p>
               <p className="text-[#f5f0e8]/75 leading-relaxed text-sm">
-                Ses œuvres ne sont pas de simples représentations, mais des entités vivantes qui respirent et pulsent,
-                réconciliant l&apos;esprit et l&apos;intimité.
+                Ses œuvres ne se regardent pas seulement : elles respirent, elles palpitent. En peignant le
+                cœur, Ani réconcilie l&apos;esprit et l&apos;intime. Puisqu&apos;une peinture est parfaite
+                lorsqu&apos;elle prend vie de la manière dont vous la lisez, elle vous laisse le libre arbitre
+                de projeter vos propres expériences sur ses tableaux.
               </p>
             </div>
 
