@@ -102,8 +102,10 @@ export default function GalleryClient() {
             <div className="divider-gold" />
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
-            {serie3.map((a) => <ArtworkCard key={a.title} a={a} />)}
+          <div className="flex justify-center">
+            <div className="w-full max-w-xs">
+              {serie3.map((a) => <ArtworkCard key={a.title} a={a} />)}
+            </div>
           </div>
         </div>
       </div>

@@ -74,7 +74,7 @@ export default function Home() {
 
           <div className="max-w-sm mx-auto">
             <div className="artwork-card group">
-              <Image src="/images/p18_img1.png" alt="La verticale et l'étendue — Désert du Sahara marocain, Merzouga"
+              <Image src="/images/Série3.png" alt="La verticale et l'étendue — Désert du Sahara marocain, Merzouga"
                 width={400} height={400}
                 className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="artwork-overlay">
@@ -104,7 +104,7 @@ export default function Home() {
               { src: "/images/p10_img1.jpeg", title: "After Tea", price: "1 300 €" },
               { src: "/images/p14_img1.jpeg", title: "Dyptique Majorelle", price: "1 600 €" },
               { src: "/images/p12_img1.jpeg", title: "Réminiscence", price: "2 100 €" },
-              { src: "/images/p17_img8.jpeg", title: "The End", price: "3 000 €" },
+              { src: "/images/Série2.jpg", title: "The End", price: "3 000 €" },
             ].map((a) => (
               <div key={a.title} className="artwork-card group">
                 <Image src={a.src} alt={a.title} width={400} height={400}
