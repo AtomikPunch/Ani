@@ -25,7 +25,7 @@ export default function Navbar({ lang, dict }: NavbarProps) {
     { href: `/${lang}/gallery`, label: dict.gallery },
   ];
 
-  // Build the same page URL for the alternate language
+  // Build current page URL for the alternate language
   const getAlternateLangHref = (targetLang: string) => {
     // pathname is e.g. /fr/about or /en/gallery
     const segments = pathname.split("/");
