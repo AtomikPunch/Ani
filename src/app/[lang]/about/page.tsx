@@ -238,7 +238,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
       <section className="border-t border-white/5 py-20 px-6 text-center">
         <blockquote className="max-w-2xl mx-auto">
           <p className="text-lg md:text-xl font-light leading-relaxed italic text-[#f5f0e8]/70">
-            &ldquo;Each artwork is a pulse — a heartbeat caught between joy and sorrow,
+            &ldquo;Each artwork is a pulse, a heartbeat caught between joy and sorrow,
             lightness and complexity, light and darkness.&rdquo;
           </p>
           <div className="divider-gold" />

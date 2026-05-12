@@ -5,6 +5,7 @@ import Image from "next/image";
 type GalleryDict = {
   serie3_collection: string;
   serie3_name: string;
+  serie3_intro: string;
   serie3_status: string;
   serie2_collection: string;
   serie2_name: string;
@@ -22,6 +23,7 @@ type GalleryDict = {
   color3_text: string;
   artwork_aftertea_desc: string;
   artwork_theend_desc: string;
+  artwork_reminiscence_subtitle: string;
   artwork_reminiscence_desc: string;
   artwork_dyptique_desc: string;
   artwork_casablanca_desc: string;
@@ -29,6 +31,10 @@ type GalleryDict = {
   artwork_marrakech_desc: string;
   artwork_tanger2_desc: string;
   artwork_verticale_desc: string;
+  artwork_verticale_status: string;
+  artwork_dunes_subtitle: string;
+  artwork_dunes_status: string;
+  artwork_dunes_desc: string;
 };
 
 interface GalleryClientProps {
@@ -43,29 +49,55 @@ type Artwork = {
   price: string;
   image: string;
   description: string;
+  /** Grande mise en page centrée (Série 3 — Dunes) */
+  featured?: boolean;
+  /** Affiche le statut « en cours » sous le tableau, bien visible en noir */
+  wipHighlight?: boolean;
 };
 
 function ArtworkCard({ a }: { a: Artwork }) {
+  const featured = a.featured === true;
+  const wipHighlight = a.wipHighlight === true;
+  const overlayMeta =
+    !wipHighlight && (a.size || a.price)
+      ? [a.size, a.price].filter(Boolean).join(" · ")
+      : "";
   return (
-    <div className="artwork-card group flex flex-col">
-      <div className="relative overflow-hidden">
+    <div className={`artwork-card group flex flex-col ${featured ? "w-full" : ""}`}>
+      <div className={`relative overflow-hidden ${featured ? "rounded-sm shadow-lg shadow-black/20" : ""}`}>
         <Image
           src={a.image}
           alt={a.title}
-          width={600}
-          height={600}
-          className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
+          width={featured ? 1400 : 600}
+          height={featured ? 1867 : 600}
+          sizes={featured ? "(max-width: 768px) 100vw, min(896px, 90vw)" : "300px"}
+          className={
+            featured
+              ? "w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              : "w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
+          }
           unoptimized={a.image.startsWith("http")}
+          priority={featured}
         />
         <div className="artwork-overlay">
-          <p className="text-white text-[0.6rem] tracking-widest uppercase mb-1">{a.subtitle}</p>
-          <p className="text-white text-sm font-light tracking-widest uppercase">{a.title}</p>
-          <p className="text-white/60 text-xs mt-1">{a.size ? `${a.size} · ` : ""}{a.price}</p>
+          <p className="text-white text-[0.6rem] tracking-widest uppercase mb-1 md:text-xs">{a.subtitle}</p>
+          <p className="text-white text-sm font-light tracking-widest uppercase md:text-base">{a.title}</p>
+          {overlayMeta && (
+            <p className="text-white/60 text-xs mt-1">{overlayMeta}</p>
+          )}
         </div>
       </div>
-      <div className="pt-3 px-1">
-        <p className="text-[#f5f0e8]/80 text-xs tracking-widest uppercase font-light">{a.title}</p>
-        <p className="text-black text-[0.65rem] mt-0.5">{a.price}</p>
+      <div className={`pt-3 px-1 text-center ${featured ? "max-w-2xl mx-auto" : ""}`}>
+        <p className="text-[#f5f0e8]/80 text-xs tracking-widest uppercase font-light md:text-sm">{a.title}</p>
+        {wipHighlight && a.price ? (
+          <p className="text-black text-lg md:text-2xl font-medium tracking-[0.25em] uppercase mt-3">
+            {a.price}
+          </p>
+        ) : (
+          a.price && (
+            <p className="text-black text-[0.65rem] mt-0.5 md:text-xs">{a.price}</p>
+          )
+        )}
       </div>
     </div>
   );
@@ -74,10 +106,20 @@ function ArtworkCard({ a }: { a: Artwork }) {
 export default function GalleryClient({ dict }: GalleryClientProps) {
   const serie3: Artwork[] = [
     {
+      title: "Dunes",
+      subtitle: dict.artwork_dunes_subtitle,
+      size: "",
+      price: dict.artwork_dunes_status,
+      image: "/images/dunes-serie3.png",
+      description: dict.artwork_dunes_desc,
+      featured: true,
+      wipHighlight: true,
+    },
+    {
       title: "La verticale et l'étendue",
       subtitle: "Désert du Sahara marocain · Merzouga",
       size: "60×50 cm",
-      price: "",
+      price: dict.artwork_verticale_status,
       image: "/images/Série3.png",
       description: dict.artwork_verticale_desc,
     },
@@ -102,7 +144,7 @@ export default function GalleryClient({ dict }: GalleryClientProps) {
     },
     {
       title: "Réminiscence",
-      subtitle: "Blue Klein & Majorelle",
+      subtitle: dict.artwork_reminiscence_subtitle,
       size: "80×80 cm",
       price: "",
       image: "/images/p12_img1.jpeg",
@@ -191,12 +233,24 @@ export default function GalleryClient({ dict }: GalleryClientProps) {
               {dict.serie3_status}
             </p>
             <div className="divider-gold" />
+            <p className="mt-8 max-w-3xl mx-auto text-sm text-[#f5f0e8]/65 leading-relaxed text-justify hyphens-auto">
+              {dict.serie3_intro}
+            </p>
           </div>
 
-          <div className="flex justify-center">
-            <div className="w-full max-w-xs">
-              {serie3.map((a) => <ArtworkCard key={a.title} a={a} />)}
-            </div>
+          <div className="flex flex-col items-center gap-16 md:gap-24 w-full">
+            {serie3.map((a) => (
+              <div
+                key={a.title}
+                className={
+                  a.featured
+                    ? "w-full max-w-4xl mx-auto px-0"
+                    : "w-full max-w-xs mx-auto"
+                }
+              >
+                <ArtworkCard a={a} />
+              </div>
+            ))}
           </div>
         </div>
       </div>

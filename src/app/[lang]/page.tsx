@@ -87,29 +87,64 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               {t.serie3_title}
             </h2>
             <div className="divider-gold" />
+            <p className="mt-8 max-w-3xl mx-auto text-[#f5f0e8]/65 text-sm leading-relaxed text-justify hyphens-auto">
+              {t.serie3_intro}
+            </p>
           </div>
 
-          <div className="max-w-sm mx-auto">
-            <div className="artwork-card group">
-              <Image
-                src="/images/Série3.png"
-                alt="La verticale et l'étendue — Désert du Sahara marocain, Merzouga"
-                width={400}
-                height={400}
-                className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="artwork-overlay">
-                <p className="text-white text-xs tracking-widest uppercase">
-                  {t.serie3_artwork_title}
-                </p>
-                <p className="text-black text-xs mt-1">
-                  {t.serie3_artwork_medium}
-                </p>
+          <div className="flex flex-col items-center gap-14 md:gap-16 w-full">
+            <div className="w-full max-w-4xl mx-auto">
+              <div className="artwork-card group">
+                <Image
+                  src="/images/dunes-serie3.png"
+                  alt={`${t.serie3_dunes_title} — ${t.serie3_artwork_location}`}
+                  width={1400}
+                  height={1867}
+                  sizes="(max-width: 768px) 100vw, min(896px, 90vw)"
+                  className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                />
+                <div className="artwork-overlay">
+                  <p className="text-white text-[0.65rem] md:text-xs tracking-widest uppercase">
+                    {t.serie3_dunes_overlay}
+                  </p>
+                  <p className="text-white text-sm md:text-base font-light tracking-widest uppercase mt-1">
+                    {t.serie3_dunes_title}
+                  </p>
+                </div>
               </div>
+              <p className="text-center mt-4 text-black text-lg md:text-2xl font-medium tracking-[0.25em] uppercase">
+                {t.serie3_dunes_status}
+              </p>
+              <p className="text-[#f5f0e8]/40 text-[0.65rem] tracking-widest uppercase text-center mt-3">
+                {t.serie3_artwork_location}
+              </p>
             </div>
-            <p className="text-[#f5f0e8]/40 text-[0.65rem] tracking-widest uppercase text-center mt-3">
-              {t.serie3_artwork_location}
-            </p>
+
+            <div className="w-full max-w-sm mx-auto">
+              <div className="artwork-card group">
+                <Image
+                  src="/images/Série3.png"
+                  alt="La verticale et l'étendue — Désert du Sahara marocain, Merzouga"
+                  width={400}
+                  height={400}
+                  className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="artwork-overlay">
+                  <p className="text-white text-xs tracking-widest uppercase">
+                    {t.serie3_artwork_title}
+                  </p>
+                  <p className="text-black text-xs mt-1">
+                    {t.serie3_artwork_medium}
+                  </p>
+                  <p className="text-white/85 text-[0.65rem] mt-2 tracking-widest uppercase">
+                    {t.serie3_artwork_status}
+                  </p>
+                </div>
+              </div>
+              <p className="text-[#f5f0e8]/40 text-[0.65rem] tracking-widest uppercase text-center mt-3">
+                {t.serie3_artwork_location}
+              </p>
+            </div>
           </div>
         </div>
       </section>
