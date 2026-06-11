@@ -68,12 +68,12 @@ function ArtworkCard({ a }: { a: Artwork }) {
         <Image
           src={a.image}
           alt={a.title}
-          width={featured ? 1400 : 600}
-          height={featured ? 1867 : 600}
+          width={featured ? 789 : 600}
+          height={featured ? 1024 : 600}
           sizes={featured ? "(max-width: 768px) 100vw, min(896px, 90vw)" : "300px"}
           className={
             featured
-              ? "w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              ? "w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
               : "w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
           }
           unoptimized={a.image.startsWith("http")}

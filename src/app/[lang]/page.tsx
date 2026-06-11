@@ -98,10 +98,10 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                 <Image
                   src="/images/dunes-serie3.png"
                   alt={`${t.serie3_dunes_title} — ${t.serie3_artwork_location}`}
-                  width={1400}
-                  height={1867}
+                  width={789}
+                  height={1024}
                   sizes="(max-width: 768px) 100vw, min(896px, 90vw)"
-                  className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                  className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                 />
                 <div className="artwork-overlay">
                   <p className="text-white text-[0.65rem] md:text-xs tracking-widest uppercase">
