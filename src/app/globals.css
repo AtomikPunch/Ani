@@ -37,7 +37,7 @@ body {
 .artwork-card { position: relative; overflow: hidden; cursor: pointer; }
 .artwork-card img {
   transition: transform 0.7s ease;
-  width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;
+  display: block;
 }
 .artwork-card:hover img { transform: scale(1.06); }
 .artwork-overlay {

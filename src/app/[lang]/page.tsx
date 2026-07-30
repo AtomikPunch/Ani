@@ -96,7 +96,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             <div className="w-full max-w-4xl mx-auto">
               <div className="artwork-card group">
                 <Image
-                  src="/images/dunes-serie3.png"
+                  src="/images/dunes-serie3-1.png"
                   alt={`${t.serie3_dunes_title} — ${t.serie3_artwork_location}`}
                   width={789}
                   height={1024}

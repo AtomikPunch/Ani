@@ -1,61 +1,15 @@
 "use client";
 
 import Image from "next/image";
-
-type GalleryDict = {
-  serie3_collection: string;
-  serie3_name: string;
-  serie3_intro: string;
-  serie3_status: string;
-  serie2_collection: string;
-  serie2_name: string;
-  serie2_subtitle: string;
-  serie2_medium: string;
-  serie1_collection: string;
-  serie1_name: string;
-  serie1_subtitle: string;
-  serie1_medium: string;
-  color1_name: string;
-  color1_text: string;
-  color2_name: string;
-  color2_text: string;
-  color3_name: string;
-  color3_text: string;
-  artwork_aftertea_desc: string;
-  artwork_theend_desc: string;
-  artwork_reminiscence_subtitle: string;
-  artwork_reminiscence_desc: string;
-  artwork_dyptique_desc: string;
-  artwork_casablanca_desc: string;
-  artwork_tanger3_desc: string;
-  artwork_marrakech_desc: string;
-  artwork_tanger2_desc: string;
-  artwork_verticale_desc: string;
-  artwork_verticale_status: string;
-  artwork_dunes_subtitle: string;
-  artwork_dunes_status: string;
-  artwork_dunes_desc: string;
-};
+import Link from "next/link";
+import { getSeries, type Artwork, type GalleryDict } from "@/lib/artworks";
 
 interface GalleryClientProps {
   dict: GalleryDict;
   lang: string;
 }
 
-type Artwork = {
-  title: string;
-  subtitle: string;
-  size: string;
-  price: string;
-  image: string;
-  description: string;
-  /** Grande mise en page centrée (Série 3 — Dunes) */
-  featured?: boolean;
-  /** Affiche le statut « en cours » sous le tableau, bien visible en noir */
-  wipHighlight?: boolean;
-};
-
-function ArtworkCard({ a }: { a: Artwork }) {
+function ArtworkCard({ a, lang }: { a: Artwork; lang: string }) {
   const featured = a.featured === true;
   const wipHighlight = a.wipHighlight === true;
   const overlayMeta =
@@ -63,7 +17,10 @@ function ArtworkCard({ a }: { a: Artwork }) {
       ? [a.size, a.price].filter(Boolean).join(" · ")
       : "";
   return (
-    <div className={`artwork-card group flex flex-col ${featured ? "w-full" : ""}`}>
+    <Link
+      href={`/${lang}/gallery/${a.slug}`}
+      className={`artwork-card group flex flex-col ${featured ? "w-full" : ""}`}
+    >
       <div className={`relative overflow-hidden ${featured ? "rounded-sm shadow-lg shadow-black/20" : ""}`}>
         <Image
           src={a.image}
@@ -99,101 +56,12 @@ function ArtworkCard({ a }: { a: Artwork }) {
           )
         )}
       </div>
-    </div>
+    </Link>
   );
 }
 
-export default function GalleryClient({ dict }: GalleryClientProps) {
-  const serie3: Artwork[] = [
-    {
-      title: "Dunes",
-      subtitle: dict.artwork_dunes_subtitle,
-      size: "",
-      price: dict.artwork_dunes_status,
-      image: "/images/dunes-serie3.png",
-      description: dict.artwork_dunes_desc,
-      featured: true,
-      wipHighlight: true,
-    },
-    {
-      title: "La verticale et l'étendue",
-      subtitle: "Désert du Sahara marocain · Merzouga",
-      size: "60×50 cm",
-      price: dict.artwork_verticale_status,
-      image: "/images/Série3.png",
-      description: dict.artwork_verticale_desc,
-    },
-  ];
-
-  const serie2: Artwork[] = [
-    {
-      title: "After Tea",
-      subtitle: "Autoportrait",
-      size: "50×50 cm",
-      price: "",
-      image: "/images/p10_img1.jpeg",
-      description: dict.artwork_aftertea_desc,
-    },
-    {
-      title: "The End",
-      subtitle: "Al Hank Lighthouse · Casablanca",
-      size: "130×97 cm",
-      price: "",
-      image: "/images/Série2.jpg",
-      description: dict.artwork_theend_desc,
-    },
-    {
-      title: "Réminiscence",
-      subtitle: dict.artwork_reminiscence_subtitle,
-      size: "80×80 cm",
-      price: "",
-      image: "/images/p12_img1.jpeg",
-      description: dict.artwork_reminiscence_desc,
-    },
-    {
-      title: "Dyptique Majorelle",
-      subtitle: "Silence absolu",
-      size: "60×60 cm",
-      price: "",
-      image: "/images/p14_img1.jpeg",
-      description: dict.artwork_dyptique_desc,
-    },
-  ];
-
-  const serie1: Artwork[] = [
-    {
-      title: "Casablanca",
-      subtitle: "2023 · Édition limitée",
-      size: "",
-      price: "",
-      image: "/images/p05_img1.jpeg",
-      description: dict.artwork_casablanca_desc,
-    },
-    {
-      title: "Tanger III",
-      subtitle: "The Sounds of Tangier",
-      size: "",
-      price: "",
-      image: "/images/p06_img1.png",
-      description: dict.artwork_tanger3_desc,
-    },
-    {
-      title: "Marrakech",
-      subtitle: "The Red City",
-      size: "",
-      price: "",
-      image: "https://static.wixstatic.com/media/b18fbb_25782a6965fe4515aad6aaa7c01f9f62~mv2.png",
-      description: dict.artwork_marrakech_desc,
-    },
-    {
-      title: "Tanger II",
-      subtitle: "Cities of Atlas",
-      size: "",
-      price: "",
-      image: "https://static.wixstatic.com/media/b18fbb_d0186b2a11c54f1aa2f4a6a7faed90f4~mv2.png",
-      description: dict.artwork_tanger2_desc,
-    },
-  ];
+export default function GalleryClient({ dict, lang }: GalleryClientProps) {
+  const { serie3, serie2, serie1 } = getSeries(dict);
 
   const colors = [
     { title: dict.color1_name, text: dict.color1_text },
@@ -241,14 +109,14 @@ export default function GalleryClient({ dict }: GalleryClientProps) {
           <div className="flex flex-col items-center gap-16 md:gap-24 w-full">
             {serie3.map((a) => (
               <div
-                key={a.title}
+                key={a.slug}
                 className={
                   a.featured
                     ? "w-full max-w-4xl mx-auto px-0"
                     : "w-full max-w-xs mx-auto"
                 }
               >
-                <ArtworkCard a={a} />
+                <ArtworkCard a={a} lang={lang} />
               </div>
             ))}
           </div>
@@ -283,7 +151,7 @@ export default function GalleryClient({ dict }: GalleryClientProps) {
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
-            {serie2.map((a) => <ArtworkCard key={a.title} a={a} />)}
+            {serie2.map((a) => <ArtworkCard key={a.slug} a={a} lang={lang} />)}
           </div>
 
           <div className="mt-16 grid md:grid-cols-3 gap-8 border-t border-white/10 pt-12">
@@ -326,7 +194,7 @@ export default function GalleryClient({ dict }: GalleryClientProps) {
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
-            {serie1.map((a) => <ArtworkCard key={a.title} a={a} />)}
+            {serie1.map((a) => <ArtworkCard key={a.slug} a={a} lang={lang} />)}
           </div>
 
           {/* Mood board */}
