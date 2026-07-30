@@ -80,7 +80,7 @@ export function getSeries(dict: GalleryDict): {
       subtitle: dict.artwork_dunes_subtitle,
       size: "81×116 cm",
       price: dict.artwork_dunes_status,
-      image: "/images/dunes-serie3-1.png",
+      image: "/images/Dune.jpg",
       description: dict.artwork_dunes_desc,
       collection: dict.serie3_name,
       featured: true,
@@ -95,6 +95,7 @@ export function getSeries(dict: GalleryDict): {
       image: "/images/Série3.png",
       description: dict.artwork_verticale_desc,
       collection: dict.serie3_name,
+      wipHighlight: true,
     },
   ];
 

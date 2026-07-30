@@ -96,7 +96,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             <div className="w-full max-w-4xl mx-auto">
               <div className="artwork-card group">
                 <Image
-                  src="/images/dunes-serie3-1.png"
+                  src="/images/Dune.jpg"
                   alt={`${t.serie3_dunes_title} — ${t.serie3_artwork_location}`}
                   width={789}
                   height={1024}
@@ -112,9 +112,26 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                   </p>
                 </div>
               </div>
-              <p className="text-center mt-4 text-black text-lg md:text-2xl font-medium tracking-[0.25em] uppercase">
-                {t.serie3_dunes_status}
-              </p>
+              <div className="text-center mt-4">
+                {(() => {
+                  const [title, ...meta] = t.serie3_dunes_status.split("\n");
+                  return (
+                    <>
+                      <p className="text-black text-sm md:text-base font-medium tracking-[0.2em] uppercase">
+                        {title}
+                      </p>
+                      {meta.map((line, i) => (
+                        <p
+                          key={i}
+                          className="text-[#f5f0e8]/40 text-[0.65rem] tracking-widest uppercase mt-1"
+                        >
+                          {line}
+                        </p>
+                      ))}
+                    </>
+                  );
+                })()}
+              </div>
               <p className="text-[#f5f0e8]/40 text-[0.65rem] tracking-widest uppercase text-center mt-3">
                 {t.serie3_artwork_location}
               </p>
@@ -133,17 +150,28 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                   <p className="text-white text-xs tracking-widest uppercase">
                     {t.serie3_artwork_title}
                   </p>
-                  <p className="text-black text-xs mt-1">
-                    {t.serie3_artwork_medium}
-                  </p>
-                  <p className="text-white/85 text-[0.65rem] mt-2 tracking-widest uppercase">
-                    {t.serie3_artwork_status}
-                  </p>
                 </div>
               </div>
-              <p className="text-[#f5f0e8]/40 text-[0.65rem] tracking-widest uppercase text-center mt-3">
-                {t.serie3_artwork_location}
-              </p>
+              <div className="text-center mt-4">
+                {(() => {
+                  const [title, ...meta] = t.serie3_artwork_status.split("\n");
+                  return (
+                    <>
+                      <p className="text-black text-sm md:text-base font-medium tracking-[0.2em] uppercase">
+                        {title}
+                      </p>
+                      {meta.map((line, i) => (
+                        <p
+                          key={i}
+                          className="text-[#f5f0e8]/40 text-[0.65rem] tracking-widest uppercase mt-1"
+                        >
+                          {line}
+                        </p>
+                      ))}
+                    </>
+                  );
+                })()}
+              </div>
             </div>
           </div>
         </div>

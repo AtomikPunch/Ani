@@ -47,9 +47,24 @@ function ArtworkCard({ a, lang }: { a: Artwork; lang: string }) {
       <div className={`pt-3 px-1 text-center ${featured ? "max-w-2xl mx-auto" : ""}`}>
         <p className="text-[#f5f0e8]/80 text-xs tracking-widest uppercase font-light md:text-sm">{a.title}</p>
         {wipHighlight && a.price ? (
-          <p className="text-black text-lg md:text-2xl font-medium tracking-[0.25em] uppercase mt-3">
-            {a.price}
-          </p>
+          (() => {
+            const [title, ...meta] = a.price.split("\n");
+            return (
+              <div className="mt-3">
+                <p className="text-black text-xs md:text-sm font-medium tracking-[0.2em] uppercase">
+                  {title}
+                </p>
+                {meta.map((line, i) => (
+                  <p
+                    key={i}
+                    className="text-[#f5f0e8]/40 text-[0.6rem] tracking-widest uppercase mt-1"
+                  >
+                    {line}
+                  </p>
+                ))}
+              </div>
+            );
+          })()
         ) : (
           a.price && (
             <p className="text-black text-[0.65rem] mt-0.5 md:text-xs">{a.price}</p>

@@ -86,14 +86,21 @@ export default async function ArtworkPage({ params }: PageProps<"/[lang]/gallery
 
             {/* Description (à compléter) */}
             {artwork.description && (
-              <p className="text-[#f5f0e8]/75 text-sm md:text-base leading-relaxed mt-6 max-w-prose">
-                {artwork.description}
-              </p>
+              <div className="mt-6 max-w-prose flex flex-col gap-4">
+                {artwork.description.split("\n\n").map((paragraph, i) => (
+                  <p
+                    key={i}
+                    className="text-[#f5f0e8]/75 text-sm md:text-base leading-relaxed"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             )}
 
             {/* Caractéristiques */}
             <div className="mt-10 flex flex-col gap-5 border-t border-white/10 pt-8">
-              {artwork.size && (
+              {artwork.size && !artwork.wipHighlight && (
                 <div>
                   <p className="text-[0.6rem] tracking-[0.3em] uppercase text-[#f5f0e8]/30 mb-1">
                     {t.detail_size_label}
@@ -101,11 +108,24 @@ export default async function ArtworkPage({ params }: PageProps<"/[lang]/gallery
                   <p className="text-sm text-[#f5f0e8]/80">{artwork.size}</p>
                 </div>
               )}
-              <div>
-                <p className="text-black text-xl md:text-2xl font-medium tracking-[0.15em] uppercase">
-                  {priceLabel}
-                </p>
-              </div>
+              {(() => {
+                const [title, ...meta] = priceLabel.split("\n");
+                return (
+                  <div>
+                    <p className="text-black text-xl md:text-2xl font-medium tracking-[0.15em] uppercase">
+                      {title}
+                    </p>
+                    {meta.map((line, i) => (
+                      <p
+                        key={i}
+                        className="text-[#f5f0e8]/50 text-xs md:text-sm tracking-widest uppercase mt-1"
+                      >
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                );
+              })()}
             </div>
 
             {/* Contact / demande */}
